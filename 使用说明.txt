@@ -1,0 +1,12 @@
+所有配置项都在config.yaml文件里配置
+
+
+安装环境:
+pip install -r requirements.txt
+
+训练:
+执行sh train.sh
+
+测试:
+执行sh detect.sh
+

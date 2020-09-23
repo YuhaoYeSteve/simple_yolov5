@@ -1,0 +1,38 @@
+# 原始数据路径(cube-point 标注好的数据)
+train_path: /data/yolov5_wh/source_data/凸透镜成像/tutoujing
+val_path: /data/yolov5_wh/source_data/凸透镜成像/tutoujing/202009141027/side
+# 训练数据路径限定
+filter: side
+
+
+# 转换数据路径(将标注好的数据转换为yolov5的数据格式; 如果路径已存在, 自动删除该文件夹) 
+convertor_path: ./convertor/tutoujing_9_21/side
+
+# task name(训练的任务名称)
+task_name: tutoujing_9_21_side
+
+# label map 
+# names: ["boliban", "ranshaolazhu", "weiranlazhu", "baizhi", "gangchi", "shou", "bi", "yuanquan", "line"]
+# names: ["support", "lever", "leverFulCrum", "leverFulCent", "leverEnd", "weight", "spring", "springHead", "springTail", "hand"]
+names: ["手", "光具座", "光屏", "光源", "凸透镜"]
+gpu_ids: "1"
+imgsz: 640
+epochs: 101
+batch_size: 8
+eval_interval: 5
+
+# #官方预训练模型
+weights: weights/yolov5x.pt
+
+# 训练模型
+# weights: work_dir/pingmianjin_9_21_side/2020-09-21/2020-09-21_12:37:40/epoch_30.pth
+
+
+#'''forward'''
+#测试时要使用训练出来的模型，不可以用官方预训练模型->'weights/yolov5x.pt'
+# source: 需要测试的图片路径    output: 测试图片输出路径
+
+source: /data/k12-yolov5/raw_data/平面镜1000张0919-end/20200919_144358/side
+output: output1
+
+
